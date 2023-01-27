@@ -8,7 +8,9 @@ public class PruebaCrearArchivoTexto {
     public static void main(String args[]) {
         Scanner entrada = new Scanner(System.in);
         String cadenaFinal = "";
-        
+        boolean bandera = true;
+        int op = 2;
+        while (bandera){
         System.out.println("Ingrese su nombre");
         String nombre = entrada.nextLine();
         System.out.println("Ingrese su apellido");
@@ -18,7 +20,13 @@ public class PruebaCrearArchivoTexto {
         
         cadenaFinal = String.format("%s%s %s %d\n", cadenaFinal, nombre, 
                 apellido, edad);
-        
+            System.out.println("ingrese 1 si desea terminar.");
+            op = entrada.nextInt();
+            entrada.nextLine();
+            if (op == 1){
+                bandera = false;
+            }
+        }
         CrearArchivoTexto.agregarRegistros(cadenaFinal);
         
 
